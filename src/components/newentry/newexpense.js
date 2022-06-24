@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import axios from 'axios';
-import { Link, useNavigate  } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 import { useState,useContext } from "react";
 import UserContext from "../../contexts";
 
@@ -8,7 +8,7 @@ export default function NewExpense(){
     const [title, setTitle] = useState("");
 	const [value, setValue] = useState("");
     const [isDisabled, setDisabled]=useState(false);
-    const {header, user} = useContext(UserContext);
+    const {header} = useContext(UserContext);
     const navigation=useNavigate();
     function createEntry(event){
         event.preventDefault();
