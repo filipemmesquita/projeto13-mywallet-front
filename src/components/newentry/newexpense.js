@@ -16,7 +16,6 @@ export default function NewExpense(){
             value:value,
             type:"expense"}
             setDisabled(true);
-        console.log(submitObject);
         const request = axios.post("https://mywallet-mesquita.herokuapp.com/entries", submitObject,header.config);
         request.then(() =>{
             navigation('/entries/');
