@@ -27,7 +27,7 @@ export default function NewExpense(){
 return(
         <Container>
             <TopWrapper>
-                <h2>Nova Entrada</h2>
+                <h2>Nova Saída</h2>
             </TopWrapper>
             <form onSubmit={createEntry}>
                 <input type="number" placeholder='Valor' value={value} onChange={e => setValue(e.target.value)} required disabled={isDisabled ? true : false} />

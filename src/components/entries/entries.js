@@ -5,6 +5,7 @@ import { useState,useContext,useEffect } from "react";
 import UserContext from "../../contexts";
 import Entry from './content';
 
+
 export default function Entries(){
     const { header, user } =useContext(UserContext);
     const [totalValue, setTotalValue]=useState(null);
@@ -20,16 +21,27 @@ export default function Entries(){
             setTotalValue(sum)
         });
         requisition.catch(error=>{
-            alert("algo deu ruim")
+            alert("Ocorreu um erro")
             console.log(error.data)
         });
     }
     useEffect(requestEntryList, []);
 
+    function logOut(){
+        const requisition=axios.delete("http://localhost:5000/logout", header.config);
+        requisition.then(response=>{
+            navigation('/');
+        });
+        requisition.catch(error=>{
+            alert("Ocorreu um erro")
+            console.log(error.data)
+        });
+    }
+
     return(
         <Container>
             <TopWrapper>
-                <h2>Olá, {user.info.name}</h2><LogOut><ion-icon name="log-out-outline"></ion-icon></LogOut>
+                <h2>Olá, {user.info.name}</h2><LogOut onClick={(logOut)}><ion-icon name="log-out-outline"></ion-icon></LogOut>
             </TopWrapper>
             <ContentBox>
                 {entryList.length>0 ?
