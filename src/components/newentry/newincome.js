@@ -17,7 +17,7 @@ export default function NewIncome(){
             type:"income"}
             setDisabled(true);
         console.log(submitObject);
-        const request = axios.post("http://localhost:5000/entries", submitObject,header.config);
+        const request = axios.post("https://mywallet-mesquita.herokuapp.com/entries", submitObject,header.config);
         request.then(() =>{
             navigation('/entries/');
             }

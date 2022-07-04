@@ -12,7 +12,7 @@ export default function Entries(){
     const [entryList,setEntryList]=useState([]);
     const navigation=useNavigate();
     function requestEntryList(){
-        const requisition=axios.get("http://localhost:5000/entries", header.config)
+        const requisition=axios.get("https://mywallet-mesquita.herokuapp.com/entries", header.config)
         requisition.then(response=>{
             setEntryList(response.data)
             let sum=0;
@@ -27,7 +27,7 @@ export default function Entries(){
     useEffect(requestEntryList, []);
 
     function logOut(){
-        const requisition=axios.delete("http://localhost:5000/logout", header.config);
+        const requisition=axios.delete("https://mywallet-mesquita.herokuapp.com/logout", header.config);
         requisition.then(response=>{
             navigation('/');
         });
@@ -56,7 +56,7 @@ export default function Entries(){
                                      />
                                      )}
                                 </ListWrapper>
-                                <SaldoWrapper endValue={totalValue}><p>Saldo:</p> <p><span>{Number(totalValue).toFixed(2)}</span></p></SaldoWrapper>
+                                <SaldoWrapper endValue={totalValue}><p>SALDO</p> <p><span>{Number(totalValue).toFixed(2)}</span></p></SaldoWrapper>
                             </>
 
                         :
@@ -74,6 +74,11 @@ const SaldoWrapper=styled.div`
 width: 100%;
 display: flex;
 justify-content: space-between;
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 700;
+font-size: 17px;
+color: #000000;
 span{
     color:${props => props.endValue>=0 ? "#03AC00":"#C70000"}
 }
@@ -121,6 +126,7 @@ margin: 0 auto;
 const ContentBox = styled.div`
 width: 326px;
 height: 100%;
+min-height: 400px;
 background: #FFFFFF;
 border-radius: 5px;
 display: flex;

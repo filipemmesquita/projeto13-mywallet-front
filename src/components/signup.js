@@ -18,7 +18,7 @@ export default function SignUp(){
                 name:nome,
                 password:senha}
                 setDisabled(true);
-            const request = axios.post("http://localhost:5000/signup", submitObject);
+            const request = axios.post("https://mywallet-mesquita.herokuapp.com/signup", submitObject);
             request.then(
                 navigation('/')
             );
