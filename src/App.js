@@ -4,7 +4,9 @@ import { useState } from "react";
 import UserContext from "./contexts";
 import Login from './components/login';
 import SignUp from './components/signup';
-
+import Entries from "./components/entries/entries";
+import NewIncome from "./components/newentry/newincome";
+import NewExpense from "./components/newentry/newexpense";
 
 export default function App(){
     const [config,setConfig] = useState(null);
@@ -18,9 +20,9 @@ export default function App(){
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/signup/" element={<SignUp />} />
-                <Route path="/entries/"  />
-                <Route path="/newexpense/"/>
-                <Route path="/newincome/"/>
+                <Route path="/entries/" element={<Entries />}  />
+                <Route path="/newexpense/" element={<NewExpense />}/>
+                <Route path="/newincome/" element={<NewIncome />}/>
             </Routes>
             </UserContext.Provider>
         </BrowserRouter>

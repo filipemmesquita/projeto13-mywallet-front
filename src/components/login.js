@@ -18,6 +18,7 @@ export default function Login(){
         console.log(submitObject);
         const request = axios.post("http://localhost:5000/login", submitObject);
         request.then(response =>{
+            console.log(response.data)
             const infoObject={name:response.data.name}
             user.setInfo(infoObject);
             header.setConfig({
@@ -26,7 +27,7 @@ export default function Login(){
                 }
                 });
  
-            //navigation('/hoje/')
+            navigation('/entries/');
             }
         );
 
@@ -49,7 +50,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-margin-top:150px;
+margin-top:100px;
 a{
     font-family: 'Raleway';
     font-style: normal;
