@@ -31,6 +31,9 @@ font-size: 20px;
 border-style: none;
 color: #FFFFFF;
 margin-bottom: 35px;
+:disabled{
+    opacity: 0.7;
+}
 }
 h1{
 font-family: 'Saira Stencil One';

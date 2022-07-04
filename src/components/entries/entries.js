@@ -121,7 +121,7 @@ margin: 0 auto;
 `;
 const ContentBox = styled.div`
 width: 326px;
-height: 446px;
+height: 100%;
 background: #FFFFFF;
 border-radius: 5px;
 display: flex;

@@ -17,6 +17,7 @@ font-style: normal;
 font-weight: 400;
 font-size: 16px;
 color: #000000;
+margin-bottom: 20px;
 span{
     color: #C6C6C6;
 }
