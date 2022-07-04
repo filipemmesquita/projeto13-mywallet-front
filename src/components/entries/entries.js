@@ -9,7 +9,6 @@ import Entry from './content';
 export default function Entries(){
     const { header, user } =useContext(UserContext);
     const [totalValue, setTotalValue]=useState(null);
-    console.log(user)
     const [entryList,setEntryList]=useState([]);
     const navigation=useNavigate();
     function requestEntryList(){
@@ -57,7 +56,7 @@ export default function Entries(){
                                      />
                                      )}
                                 </ListWrapper>
-                                <SaldoWrapper endValue={totalValue}><p>Saldo:</p> <p><span>{totalValue}</span></p></SaldoWrapper>
+                                <SaldoWrapper endValue={totalValue}><p>Saldo:</p> <p><span>{Number(totalValue).toFixed(2)}</span></p></SaldoWrapper>
                             </>
 
                         :

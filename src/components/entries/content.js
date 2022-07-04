@@ -1,10 +1,9 @@
 import styled from 'styled-components';
 
 export default function Entry(props){
-    console.log(props.date)
     return(
         <EntryWrapper>
-            <p><span>{props.date.substring(0,5)} </span> {props.title}</p><Value type={props.type} >{props.value}</Value>
+            <p><span>{props.date.substring(0,5)} </span> {props.title}</p><Value type={props.type} >{Number(props.value).toFixed(2)}</Value>
         </EntryWrapper>
     );
 }

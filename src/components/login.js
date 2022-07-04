@@ -15,10 +15,8 @@ export default function Login(){
         const submitObject ={email:email,
             password:senha}
             setDisabled(true);
-        console.log(submitObject);
         const request = axios.post("http://localhost:5000/login", submitObject);
         request.then(response =>{
-            console.log(response.data)
             const infoObject={name:response.data.name}
             user.setInfo(infoObject);
             header.setConfig({
